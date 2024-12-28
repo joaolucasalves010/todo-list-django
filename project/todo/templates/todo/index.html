@@ -1,0 +1,55 @@
+<!-- index.html -->
+{% extends "partials/head.html" %}
+{% block content %}
+{% load static %}
+<div class="container">
+  <nav>
+    <div id="nav-icon">
+      <img src="{% static 'img/lista.png' %}" alt="Lista icon">
+    </div>
+  </nav>
+  <div class="todo-container">
+    <form action="{% url 'todo:create' %}" method="POST" id="task-form">
+      {% csrf_token %}
+      <h1>Adicionar Task</h1>
+      <div class="input-field">
+        <input type="text" name="task_name" required placeholder="Escreva sua task aqui:" id="add-task-name">
+        <input type="submit" id="add-task-input" value="Adicionar">
+      </div>
+    </form>
+  </div>
+  
+  <div class="tasks {{class}}">
+    {% for task in tasks %}
+    {% if task.finished == True %}
+    <div class="task finished">
+      <p>{{task.task_name}}</p>
+      <div id="task-buttons">
+        <form method="POST" action="{% url "todo:delete" %}">
+          {% csrf_token %}
+          <input type="hidden" name="task_id" value="{{ task.id }}">
+          <button id="delete-task">Deletar</button>
+        </form>
+      </div>
+    </div>
+    {% else %}
+    <div class="task">
+      <p>{{task.task_name}}</p>
+      <div id="task-buttons">
+        <form method="POST" action="{% url "todo:finish" %}">
+          {% csrf_token %}
+          <input type="hidden" name="task_id" value="{{ task.id }}">
+          <button id="finish-task" value="{{task.task_name}}">Concluir</button>
+        </form>
+        <form method="POST" action="{% url "todo:delete" %}">
+          {% csrf_token %}
+          <input type="hidden" name="task_id" value="{{ task.id }}">
+          <button id="delete-task">Deletar</button>
+        </form>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #121214;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distribui os itens com espaço entre eles */
+  padding: 2rem;
+  font-weight: 600;
+  border-bottom: 1px solid #333;
+  margin: 0 auto;
+  position: relative;
+}
+
+#nav-icon {
+  position: absolute;
+  left: 2rem; /* Ajusta a posição à esquerda */
+}
+
+.nav-title {
+  flex: 1;
+  text-align: center; /* Centraliza o texto do título */
+}
+
+img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-field {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#add-task-name {
+  outline: none;
+  background: none;
+  width: 300px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 1rem;
+  color: #FFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#add-task-input {
+  background-color: #00A9A5;
+  outline: none;
+  cursor: pointer;
+  color: #FFF;
+  border: none;
+  border-radius: 4px;
+  height: 45px;
+  font-size: 1rem;
+  padding: 1rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.5s;
+  opacity: 0.8;
+}
+
+#add-task-input:hover {
+  transform: scale(1.1);
+  opacity: 1.0;
+}
+
+#task-form h1 {
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.todo-container {
+  padding: 2rem;
+  border-radius: 4px;
+  border: #333 2px solid;
+  margin-top: 2rem;
+}
+
+.tasks {
+  border: 3px solid #333;
+  margin-top: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.task {
+  background-color: #fff;
+  display: flex;
+  margin-top: 1rem;
+  width: 90%;
+  padding: 1rem;
+  border-radius: 15px;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+#task-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#finish-task {
+  background-color: #63C132;
+}
+
+#delete-task {
+  background-color: #AD2831;
+}
+
+#finish-task, #delete-task{
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+  border: none;
+  border-radius: 4px;
+  padding: 1rem;
+  outline: none;
+}
+
+#finish-task:hover, #delete-task:hover{
+  transform: scale(1.1);
+}
+
+.finished {
+  background-color: #63C132;
+  color: #fff;
+}
+
+.hide {
+  display: none;
+}
+
+#register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #333 3px solid;
+  border-radius: 5px;
+  width: 458px;
+  margin: 50px auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+#register-form-container form {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+#register-form-container {
+  width: 100%;
+}
+
+#form-register-title {
+  color: #fff;
+}
+
+#id_username {
+  border: none;
+  outline: none;
+  background: none;
+  color: #FFF;
+  border: 2px solid #333;
+  border-radius: 5px;
+  width: 70%;
+  padding: 0.5rem;
+  margin: 20px auto;
+  font-size: 1rem;
+}
+
+#id_password1 {
+  border: none;
+  outline: none;
+  background: none;
+  color: #FFF;
+  border: 2px solid #333;
+  border-radius: 5px;
+  width: 70%;
+  padding: 0.5rem;
+  margin: 20px auto;
+  font-size: 1rem;
+}
+
+#register-btn {
+  width: 30%;
+  margin: 10px auto;
+  background-color: #00A9A5;
+  color: #fff;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#register-btn:hover {
+  transform: scale(1.1);
+}
+
+
+/* Media Query para dispositivos com largura máxima de 425px */
+@media (max-width: 426px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  nav {
+    padding: 1rem;
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: flex-start; /* Alinha os itens ao início */
+  }
+
+  #nav-icon {
+    position: relative;
+    left: 0; /* Ajusta a posição */
+    margin-bottom: 1rem; /* Espaço entre o ícone e o restante do menu */
+  }
+
+  .nav-title {
+    text-align: left; /* Alinha o título à esquerda */
+  }
+
+  .input-field {
+    flex-direction: column; /* Empilha os itens verticalmente */
+    gap: 0.5rem; /* Espaçamento entre os itens */
+    width: 100%; /* Largura total */
+  }
+
+  
+  .todo-container {
+    border: none;
+  }
+
+  .task {
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: flex-start; /* Alinha os itens ao início */
+    gap: 0.5rem; /* Espaçamento entre os itens */
+  }
+
+  #task-buttons {
+    width: 100%; /* Largura total */
+    flex-direction: column;
+  }
+
+  #finish-task, #delete-task{
+    width: 48%; /* Define uma largura fixa para os botões */
+  }
+}
